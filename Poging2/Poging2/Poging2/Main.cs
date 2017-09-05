@@ -20,7 +20,7 @@ namespace MonoBrickHelloWorld
 			Lcd.Update ();
 
 
-			//kijken of de sensor werkt123
+			//kijken of de sensor
 
 		}
 	}
