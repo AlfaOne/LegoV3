@@ -17,6 +17,13 @@ namespace MonoBrickHelloWorld
 			motor.Off ();
 			Lcd.Clear ();
 			Lcd.Update ();
+
+			Motor motorB = new Motor (MotorPort.OutB);
+			motorB.SetSpeed (50);
+			Thread.Sleep (3000);
+			motorB.Off ();
+			Lcd.Clear ();
+			Lcd.Update ();
 			//kijken of de sensor werkt
 
 			//hoi1
