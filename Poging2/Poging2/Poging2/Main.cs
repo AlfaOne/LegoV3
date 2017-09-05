@@ -18,15 +18,19 @@ namespace MonoBrickHelloWorld
 			Lcd.Clear ();
 			Lcd.Update ();
 
+			//Motor Poort B
 			Motor motorB = new Motor (MotorPort.OutB);
 			motorB.SetSpeed (50);
 			Thread.Sleep (3000);
 			motorB.Off ();
 			Lcd.Clear ();
 			Lcd.Update ();
-			//kijken of de sensor werkt
+		
+			//kijken of de sensor werkt 
 
-			//hoi1
+			//sensor dist = new MonoBrickFirmware.Sensors.EV3UltrasonicSensor (MotorPort.OutC);
+
+
 
 		}
 	}
