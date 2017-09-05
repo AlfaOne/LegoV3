@@ -18,8 +18,12 @@ namespace MonoBrickHelloWorld
 			motor.Off ();
 			Lcd.Clear ();
 			Lcd.Update ();
+<<<<<<< Updated upstream
 			// hello test
 			// lekker
+=======
+			// hello test1
+>>>>>>> Stashed changes
 		}
 	}
 }
