@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using MonoBrickFirmware;
 using MonoBrickFirmware.Display.Dialogs;
 using MonoBrickFirmware.Display;
@@ -19,9 +18,7 @@ namespace MonoBrickHelloWorld
 			Lcd.Clear ();
 			Lcd.Update ();
 
-
-			//kijken of de sensor
-
+			//kijken of de
 		}
 	}
 }
