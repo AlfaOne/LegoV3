@@ -21,7 +21,6 @@ namespace MonoBrickHelloWorld
 
 
 			//kijken of de sensor werkt
-			//hpo
 
 		}
 	}
