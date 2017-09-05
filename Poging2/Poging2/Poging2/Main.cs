@@ -18,7 +18,9 @@ namespace MonoBrickHelloWorld
 			motor.Off ();
 			Lcd.Clear ();
 			Lcd.Update ();
-			//test
+
+
+			//kijken of de sensor werkt
 		}
 	}
 }
