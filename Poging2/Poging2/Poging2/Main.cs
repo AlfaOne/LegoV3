@@ -19,6 +19,7 @@ namespace MonoBrickHelloWorld
 			Lcd.Clear ();
 			Lcd.Update ();
 			// hello test
+			// lekker
 		}
 	}
 }
