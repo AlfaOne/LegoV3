@@ -18,7 +18,7 @@ namespace MonoBrickHelloWorld
 			motor.Off ();
 			Lcd.Clear ();
 			Lcd.Update ();
-			// hello
+			// hello test
 		}
 	}
 }
