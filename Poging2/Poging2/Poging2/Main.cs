@@ -39,73 +39,39 @@ namespace MonoBrickHelloWorld
 			return distance;
 			}
 
-		public static void Main (string[] args)
+		public static void RijBepaaldeAfstand (int i)
 		{
-//			int n = 1;
-//			while (n < 6) {
-//				if ( SensorAfstand() < 100) {
-//					Hefarm (-10, 1000);
-//				}
-//				if ( SensorAfstand() > 100) {
-//					Hefarm (10, 1000);
-//				}
-//				LcdConsole.WriteLine ("Distance: " + SensorAfstand());
-//			}
+			Motor motor = new Motor (MotorPort.OutA);
+			Motor motorB = new Motor (MotorPort.OutB);
+			motor.ResetTacho ();
 
 			int n = 1;
-						while (n < 6) {
-							if ( SensorAfstand() < 100) {
-					Motoren (50, 1000, 50);
-							}
-							if ( SensorAfstand() > 100) {
-					Motoren (-50, 1000, -50);
+			while (n < 6) {
+
+				motor.SetSpeed (-25);
+				motorB.SetSpeed (-25);
+				int distance = motor.GetTachoCount ();
+				int afstand = distance;
+
+				if ( afstand < (i)) {
+					motor.Off ();
+					motorB.Off ();
+					n = 8;
 				}
-					Hefarm (20, 500);
-					Hefarm (-20, 500);
-							LcdConsole.WriteLine ("Distance: " + SensorAfstand());
-						}
+				LcdConsole.WriteLine ("Afstand: " + afstand);
+			}
+		}
+
+		public static void Main (string[] args)
+		{
+
+			RijBepaaldeAfstand (-900);
 
 			//Hefarm
-			for (int i = 0; i < 10; i++) {
-				Hefarm (20, 500);
-				Hefarm (-20, 500);
-				if (i == 4) {
-					break;
-				};
-				}
-
-//				for (int x=0; x<1; x++) {
-//					TastenStatus = Buttons.GetKeypress();
-//					if (TastenStatus == Buttons.ButtonStates.Enter) { terminateProgram.Set();}
-//				}
-//
-//
-//			motor.SetSpeed (100);
-//			motorB.SetSpeed (-100);
-//			Thread.Sleep (4000);
-//			motor.Off ();
-//			motorB.Off ();
-//
-//			if (distance < 30) {
-//				motor.Off ();
-//				motorB.Off ();
-//			}
-
-//			if (distance >100) {
-//				Console.WriteLine ("boven 100");
-//				motor.SetSpeed (-30);
-//				motorB.SetSpeed (-30);
-//
-//							Thread.Sleep (1000);
-//				motor.Off ();
-//							motorB.Off ();
-//							Lcd.Clear ();
-//							Lcd.Update ();
-//			}
-
-
-
-
+			Hefarm (25, 500);
+			Hefarm (-20, 500);
+			Lcd.Clear ();
+			Lcd.Update ();
 
 		}
 	}
