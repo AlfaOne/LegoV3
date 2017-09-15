@@ -64,7 +64,7 @@ namespace MonoBrickHelloWorld
 
 		public static void Main (string[] args)
 		{
-
+			//afstand is -900
 			RijBepaaldeAfstand (-900);
 
 			//Hefarm
