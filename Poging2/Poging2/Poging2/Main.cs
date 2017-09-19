@@ -39,6 +39,23 @@ namespace MonoBrickHelloWorld
 			return distance;
 			}
 
+		public static int Gyroscope()
+		{
+			MonoBrickFirmware.Sensors.EV3GyroSensor Gyroskoopje = new MonoBrickFirmware.Sensors.EV3GyroSensor(MonoBrickFirmware.Sensors.SensorPort.In2);
+			int graden = Gyroskoopje.Read();
+			LcdConsole.WriteLine ("Graden: " + graden);
+			return graden;
+		}
+
+		public static void Boombox()
+		{
+			MonoBrickFirmware.Sound.Speaker Magneto = new MonoBrickFirmware.Sound.Speaker(100);
+			String soundfilename = "/home/root/apps/Poging2/sound/wanderer1.wav";
+			Magneto.PlaySoundFile (soundfilename, 100);
+			RijBepaaldeAfstand (-600);
+			Magneto.Beep (500);
+		}
+
 		public static void RijBepaaldeAfstand (int i)
 		{
 			Motor motor = new Motor (MotorPort.OutA);
@@ -48,8 +65,8 @@ namespace MonoBrickHelloWorld
 			int n = 1;
 			while (n < 6) {
 
-				motor.SetSpeed (-25);
-				motorB.SetSpeed (-25);
+				motor.SetSpeed (25);
+				motorB.SetSpeed (25);
 				int distance = motor.GetTachoCount ();
 				int afstand = distance;
 
@@ -64,15 +81,25 @@ namespace MonoBrickHelloWorld
 
 		public static void Main (string[] args)
 		{
-			//afstand is -900
-			RijBepaaldeAfstand (-900);
+			//geluid
+			Boombox ();
 
-			//Hefarm
-			Hefarm (25, 500);
-			Hefarm (-20, 500);
-			Lcd.Clear ();
-			Lcd.Update ();
+//			//afstand is -900
+//			RijBepaaldeAfstand (-600);
+//
+//			//Hefarm
+//			Hefarm (25, 500);
+//			Hefarm (-20, 500);
+//			Lcd.Clear ();
+//			Lcd.Update ();
 
+
+
+//			int n = 1;
+//			while (n < 50) {
+//				Gyroscope ();
+//				n++;
+//			}
 		}
 	}
 	}
